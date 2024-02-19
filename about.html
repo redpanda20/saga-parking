@@ -18,6 +18,24 @@
 </head>
 
 <body>
+    <dialog class="mobile-menu" id="mobile-menu">
+        <div class="actions">
+            <button onclick="setMobileMenuOpen(false)">
+                <svg height="3rem" viewBox="0 0 384 512">
+                    <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                </svg>
+            </button>
+        </div>
+        <nav>
+            <ul class="flex-list" data-direction="column">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="https://sagainc.getqpay.com/?s=3772" class="button last">Sign Up</a></li>
+            </ul>
+        </nav>
+    </dialog>
     <header class="header">
         <div class="split-column">
             <a href="index.html" class="logo">
@@ -36,7 +54,7 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="https://sagainc.getqpay.com/?s=3772" class="button">Sign Up</a></li>
                 </ul>
-                <button class="mobile">
+                <button class="mobile" onclick="setMobileMenuOpen(true)">
                     <svg height="3rem"
                         viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <path
@@ -150,6 +168,16 @@
             </ul>
         </footer>
     </div>
+    <script>
+        const mobileMenu = document.querySelector("#mobile-menu");
+        function setMobileMenuOpen(state) {
+            if (state) {
+                mobileMenu.showModal();
+            } else {
+                mobileMenu.close();
+            }
+        }
+    </script>
 </body>
 
 </html>

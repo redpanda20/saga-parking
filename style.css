@@ -111,6 +111,19 @@ footer {
     list-style-type: none;
     display: flex;
     gap: var(--_gap, 1rem);
+    flex-grow: 1;
+
+    .last {
+        margin-left: auto;
+    }
+}
+
+.flex-list[data-direction="column"] {
+    flex-direction: column;
+
+    .last {
+        margin-top: auto;
+    }
 }
 
 a {
@@ -343,4 +356,30 @@ button {
 /* Debug */
 a[href=""] {
     background-color: red !important;
+}
+
+.mobile-menu {
+    margin-left: auto;
+    height: 100%;
+    max-height: 100%;
+    width: 40vw;
+    border: none;
+
+    padding: 2rem;
+
+    &> :first-child {
+        margin-left: auto;
+    }
+
+    &> :last-child {
+        flex-grow: 1;
+    }
+
+    .actions * {
+        margin-left: auto;
+    }
+}
+
+::backdrop {
+    background-color: hsl(0 0% 0% / 0.4);
 }
