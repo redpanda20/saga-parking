@@ -80,16 +80,23 @@ footer {
     row-gap: 1rem;
 }
 
+.split-column {
+    display: flex;
+    justify-content: space-between;
+}
+
 .two-columns {
     display: grid;
     gap: var(--_gap, 1rem);
-    justify-items: center;
+
+    grid-template-columns: 1fr 1fr;
+    justify-items: auto;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 900px) {
     .two-columns {
-        grid-template-columns: 1fr 1fr;
-        justify-items: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 }
 
@@ -318,6 +325,18 @@ button {
 
     *:has(input) {
         grid-column: span 1;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .desktop {
+        display: none;
     }
 }
 
