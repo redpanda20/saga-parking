@@ -250,6 +250,7 @@ button {
 .background {
     border-radius: 2rem;
     object-fit: cover;
+    object-position: top;
     width: 100%;
 }
 
